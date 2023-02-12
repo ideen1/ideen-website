@@ -18,10 +18,15 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className='grid w-screen h-screen bg-primary'>
-        <Navigation />
+      <div className='w-screen h-screen bg-primary'>
 
-        <AboutCard />
+        <div className='grid h-1/6 w-full '>
+          <Navigation />
+        </div>
+        <div className='h-5/6 w-full gap-4 content-start'>
+          <AboutCard />
+        </div>
+
 
       </div>
     </>

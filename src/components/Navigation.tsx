@@ -37,11 +37,12 @@ export default function Navigation() {
         <>
             <div className='w-full h-20 bg-gradient-to-b from-primary p-3'>
 
-                <div className='flex justify-between items-center'>
+                <div className='flex justify-between items-center w-full'>
                     <div className='text-2xl drop-shadow-2xl'>
                         <IconButton className='visible md:invisible'>
                             <MenuIcon className='text-white' />
                         </IconButton>
+                        <span></span>
                         <span className='text-white pr-5 border-accent border-b-2 '>Ideen</span>
                     </div>
                     <div className='text-xl'>
