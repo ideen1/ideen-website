@@ -35,25 +35,23 @@ export default function AboutCard() {
 
     return (
         <>
-            <div className='grid m-auto bg-zinc-700 h-1/2 w-4/5 lg:w-3/5 rounded-3xl '>
-                <div className='grid grid-cols-1 h-full md:grid-cols-2 place-items-center '>
-                    <div className='grid h-4/5  md:border-r-2 items-center-'>
+            <div className='grid m-auto bg-zinc-700 h-fit md:h-1/2 w-full lg:w-3/5 rounded-3xl'>
+                <div className='grid grid-cols-1 h-full md:grid-cols-2 place-items-center'>
+                    <div className='grid h-4/5 w-full md:border-r-2 content-center'>
                         <div className='grid m-5 place-items-center'>
-                            <div className='grid h-20'>
-                                <h1 className='text-3xl font-bold text-white'>Ideen Banijamali</h1>
-                                <h2 className='text-2xl font-bold text-accent'>
+                            <div className='grid h-full w-4/5'>
+                                <Image className="rounded-full m-auto" src={'/me.jpg'} alt={'Ideen Photo'} width={150} height={150} />
+                                <h1 className='grid text-3xl font-bold text-white m-auto'>Ideen Banijamali</h1>
+                                <h2 className='grid text-2xl font-bold text-accent m-auto'>
                                     <TextScramble text={currentThing} scramble={8} />
                                 </h2>
-
                             </div>
-
                         </div>
                     </div>
                     <div className='grid h-4/5 place-content-center'>
                         <div className='grid m-5 justify-self-start'>
                             <p className='text-white'>Welcome to ideen.ca! I am a passionate 3rd year Software Engineering student interested in full-stack and embedded. This summer I will be joining HPE as a Software Intern.</p>
                             <div>
-
                             </div>
                         </div>
                     </div>
