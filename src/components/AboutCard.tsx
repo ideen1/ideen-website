@@ -12,19 +12,18 @@ import { Button } from '@mui/material';
 
 
 export default function AboutCard() {
-    const thingsIam = ['Full-Stack', 'Embedded', 'Software Engineer', 'Student', 'Innovator', 'Leader', 'Creative', 'Curious'];
+    const thingsIam = ['Full-Stack Engineer', 'Software Engineering Student', 'Software Engineer', 'Embedded Engineer', 'Innovator', 'Leader', 'Creative', 'Curious'];
 
-    const [currentThing, setCurrentThing] = useState('');
+    const [currentThing, setCurrentThing] = useState('Software Engineer');
 
     useEffect(() => {
         setTimeout(() => {
             const randomThing = thingsIam[Math.floor(Math.random() * thingsIam.length)];
             setCurrentThing(randomThing);
 
-        }, 2000);
+        }, 3500);
     }, [currentThing]);
 
-    const duration = 300;
 
 
     const [mode, setMode] = React.useState("out-in");
@@ -43,7 +42,7 @@ export default function AboutCard() {
                             <div className='grid h-20'>
                                 <h1 className='text-3xl font-bold text-white'>Ideen Banijamali</h1>
                                 <h2 className='text-2xl font-bold text-accent'>
-                                    <TextScramble text={currentThing} scramble={2} />
+                                    <TextScramble text={currentThing} scramble={8} />
                                 </h2>
 
                             </div>
