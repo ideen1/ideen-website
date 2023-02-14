@@ -50,7 +50,15 @@ export default function AboutCard() {
                     </div>
                     <div className='grid h-4/5 place-content-center'>
                         <div className='grid m-5 justify-self-start'>
-                            <p className='text-white'>Welcome to ideen.ca! I am a passionate 3rd year Software Engineering student interested in full-stack and embedded. This summer I will be joining HPE as a Software Intern.</p>
+                            <p className='text-white'>
+                                Welcome to ideen.ca! I'm a software 
+                                engineering student whose passionate about 
+                                creating innovative solutions. Through my previous internships and clubs,
+                                I have worked with various programming languages and 
+                                technologies. I'm eager to continue learning and 
+                                taking on new challenges to make a positive impact 
+                                through software development. This summer I will be 
+                                joining Hewlett Packard Enterprise as a Software Intern.</p>
                             <div>
                             </div>
                         </div>
