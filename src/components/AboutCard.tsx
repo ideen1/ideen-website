@@ -51,11 +51,11 @@ export default function AboutCard() {
                     <div className='grid h-4/5 place-content-center'>
                         <div className='grid m-5 justify-self-start'>
                             <p className='text-white'>
-                                Welcome to ideen.ca! I'm a software 
+                                Welcome to ideen.ca! I&apos;m a software 
                                 engineering student whose passionate about 
                                 creating innovative solutions. Through my previous internships and clubs,
                                 I have worked with various programming languages and 
-                                technologies. I'm eager to continue learning and 
+                                technologies. I&apos;m eager to continue learning and 
                                 taking on new challenges to make a positive impact 
                                 through software development. This summer I will be 
                                 joining Hewlett Packard Enterprise as a Software Intern.</p>
