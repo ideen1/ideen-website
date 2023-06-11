@@ -85,7 +85,7 @@ export default function Projects() {
 
         <div className='flex flex-wrap gap-14 p-4'>
           {projects.map((project, index) => (
-            <AnimateSlide direction='up' delay={(index + 1) * 300}>
+            <AnimateSlide direction='up' delay={(index + 1) * 300} key={index}>
               <ProjectCard
                 title={project.title}
                 description={project.description}
