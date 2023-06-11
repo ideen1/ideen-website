@@ -5,6 +5,7 @@ import { GoogleAnalytics } from "nextjs-google-analytics";
 import { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
+import type { Engine, Container } from "tsparticles-engine";
 
 export default function App({ Component, pageProps }: AppProps) {
   const particlesInit = useCallback(async (engine: Engine) => {
@@ -29,13 +30,10 @@ export default function App({ Component, pageProps }: AppProps) {
         loaded={particlesLoaded}
         options={{
           background: {
-
             color: {
               value: "#372549",
             },
-
           },
-
           fpsLimit: 120,
           interactivity: {
             events: {

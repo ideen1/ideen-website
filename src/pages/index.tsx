@@ -5,26 +5,10 @@ import styles from '@/styles/Home.module.css'
 import Navigation from '@/components/Navigation';
 import AboutCard from '@/components/AboutCard';
 import AnimateSlide from '@/components/AnimateSlide';
-import { useCallback } from "react";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-
-  const particlesInit = useCallback(async (engine: Engine) => {
-    console.log(engine);
-
-    // you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
-    // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-    // starting from v2 you can add only the features you need reducing the bundle size
-    await loadFull(engine);
-  }, []);
-
-  const particlesLoaded = useCallback(async (container: Container | undefined) => {
-    await console.log(container);
-  }, []);
   return (
     <>
       <Head>
