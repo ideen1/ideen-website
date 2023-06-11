@@ -48,7 +48,7 @@ export default function Navigation() {
                     <div className='text-xl'>
                         <Box className='invisible md:visible'>
                             {navItems.map((item) => (
-                                <Link key={item.url} href={item.url} className='text-white hover:bg-accent p-2 rounded-lg'>
+                                <Link key={item.url} href={item.url} className='text-white hover:before:scale-x-100 hover:before:origin-left relative before:w-full before:h-1 before:origin-right before:transition-transform before:duration-300 before:scale-x-0 before:bg-accent before:absolute before:left-0 before:bottom-0  p-2 rounded-lg'>
                                     {item.name}
                                 </Link>
                             ))}

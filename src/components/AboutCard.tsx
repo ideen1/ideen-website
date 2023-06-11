@@ -58,7 +58,7 @@ export default function AboutCard() {
                                 technologies. I&apos;m eager to continue learning and 
                                 taking on new challenges to make a positive impact 
                                 through software development. This summer I will be 
-                                joining Hewlett Packard Enterprise as a Software Intern.</p>
+                                joining <b>Hewlett Packard Enterprise</b> as a Software Intern.</p>
                             <div>
                             </div>
                         </div>
