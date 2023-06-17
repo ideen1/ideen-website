@@ -4,70 +4,21 @@ import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import Navigation from '@/components/Navigation';
 import AnimateSlide from '@/components/AnimateSlide';
-import { useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import ProjectCard from '@/components/ProjectCard';
+import { ProjectData } from '@/types/IProject';
 
 const inter = Inter({ subsets: ['latin'] })
 
-type IProject = {
-  title: string;
-  description: string;
-  image: string;
-  link: string;
-}
-
 export default function Projects() {
 
-  const [projects, setProjects] = useState<IProject[]>([
-    {
-      title: 'Project 1',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-      image: '/images/1.jpg',
-      link: 'https://google.com'
-    },
-    {
-      title: 'Project 2',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-      image: '/images/2.jpg',
-      link: 'https://google.com'
-    },
-    {
-      title: 'Project 1',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-      image: '/images/1.jpg',
-      link: 'https://google.com'
-    },
-    {
-      title: 'Project 2',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-      image: '/images/2.jpg',
-      link: 'https://google.com'
-    },
-    {
-      title: 'Project 1',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-      image: '/images/1.jpg',
-      link: 'https://google.com'
-    },
-    {
-      title: 'Project 2',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-      image: '/images/2.jpg',
-      link: 'https://google.com'
-    },
-    {
-      title: 'Project 1',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-      image: '/images/1.jpg',
-      link: 'https://google.com'
-    },
-    {
-      title: 'Project 2',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.',
-      image: '/images/2.jpg',
-      link: 'https://google.com'
-    }
-  ]);
+  const [response, setProjects] = useState<ProjectData>({ projects: [] });
+  useEffect(() => {
+    fetch('/api/get-projects')
+      .then(res => res.json())
+      .then(data => setProjects(data))
+  }, [])
+
 
   return (
     <>
@@ -84,18 +35,19 @@ export default function Projects() {
         </AnimateSlide>
 
         <div className='flex flex-wrap gap-14 p-4'>
-          {projects.map((project, index) => (
-            <AnimateSlide direction='up' delay={(index + 1) * 300} key={index}>
-              <ProjectCard
-                title={project.title}
-                description={project.description}
-                image={project.image}
-                link={project.link}
-              />
-            </AnimateSlide>
+          {response.projects.map((project, index) => (
+            <div className='m-auto w-96' key={index}>
+              <AnimateSlide direction='up' delay={(index + 1) * 300} >
+                <ProjectCard
+                  title={project.title}
+                  description={project.description}
+                  image={project.image}
+                  link={project.link}
+                />
+              </AnimateSlide>
+            </div>
           ))}
         </div>
-
       </div>
     </>
   )
