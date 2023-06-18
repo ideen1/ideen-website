@@ -21,7 +21,7 @@ export default function Home() {
       <div className='w-screen h-screen'>
        
         <div className='grid h-1/6 w-full '>
-          <AnimateSlide direction='down' delay={1000}>
+          <AnimateSlide direction='down' delay={500}>
             <Navigation />
           </AnimateSlide>
         </div>
@@ -29,9 +29,7 @@ export default function Home() {
           <AnimateSlide direction='right'>
             <AboutCard />
           </AnimateSlide>
-
         </div>
-
       </div>
     </>
   )

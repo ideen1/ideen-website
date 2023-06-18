@@ -46,7 +46,7 @@ export default function App({ Component, pageProps }: AppProps) {
             modes: {
               repulse: {
                 distance: 20,
-                duration: 0.4,
+                duration: 4,
               },
             },
           },
@@ -59,7 +59,7 @@ export default function App({ Component, pageProps }: AppProps) {
               distance: 150,
               enable: true,
               opacity: 0.5,
-              width: 1,
+              width: 2,
             },
             collisions: {
               enable: true,
@@ -77,7 +77,7 @@ export default function App({ Component, pageProps }: AppProps) {
             number: {
               density: {
                 enable: true,
-                area: 1500,
+                area: 1100,
               },
               value: 80,
             },
