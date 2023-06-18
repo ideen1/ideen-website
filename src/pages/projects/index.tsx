@@ -1,24 +1,16 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
 import Navigation from '@/components/Navigation';
 import AnimateSlide from '@/components/AnimateSlide';
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense } from 'react';
 import ProjectCard from '@/components/ProjectCard';
 import { ProjectData } from '@/types/IProject';
 import ProjectCardLoader from '@/components/ProjectCardLoader';
+import { projects } from '../api/data/projects';
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Projects() {
-
-  const [response, setProjects] = useState<ProjectData>({ projects: [] });
-  useEffect(() => {
-    fetch('/api/get-projects')
-      .then(res => res.json())
-      .then(data => setProjects(data))
-  }, [])
+export default function Projects(data: ProjectData) {
 
 
   return (
@@ -43,7 +35,7 @@ export default function Projects() {
         </div> */}
         <div className='flex flex-wrap justify-evenly gap-14 p-4'>
           <Suspense fallback={<ProjectCardLoader />}>
-            {response.projects.map((project, index) => (
+            {data.projects.map((project, index) => (
               <div className='w-96' key={index}>
                 <AnimateSlide direction='up' delay={(index + 1) * 300} >
                   <Suspense fallback={<ProjectCardLoader />}>
@@ -63,4 +55,9 @@ export default function Projects() {
       </div>
     </>
   )
+}
+
+export async function getServerSideProps() {
+  // Pass data to the page via props
+  return { props: projects }
 }

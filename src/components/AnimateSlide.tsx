@@ -1,13 +1,10 @@
-
-import Head from 'next/head'
-import { useEffect, useRef, useState } from 'react';
+import {useRef } from 'react';
 import Slide from '@mui/material/Slide';
 import Fade from '@mui/material/Fade';
 
 
 export default function AnimateSlide(pageProps: any) {
     const containerRef = useRef(null);
-
 
     return (
         <>

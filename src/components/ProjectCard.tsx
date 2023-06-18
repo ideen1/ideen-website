@@ -1,7 +1,4 @@
-import Head from 'next/head'
-import { Suspense, useEffect, useRef, useState } from 'react';
 import Image from 'next/image'
-import captureWebsite from 'capture-website';
 import React from 'react';
 import { Button } from '@mui/material';
 import { Project } from '@/types/IProject';

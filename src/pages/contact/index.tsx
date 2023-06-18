@@ -3,7 +3,6 @@ import Navigation from '@/components/Navigation';
 import AnimateSlide from '@/components/AnimateSlide';
 import { useForm } from 'react-hook-form';
 import { Button, FormControl } from '@mui/material';
-import { useState } from 'react';
 import axios from 'axios';
 
 const FormFields = {
@@ -11,8 +10,6 @@ const FormFields = {
   email: '',
   message: ''
 };
-
-type IFormData = typeof FormFields;
 
 export default function Projects() {
   const {

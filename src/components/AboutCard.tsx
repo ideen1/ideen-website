@@ -1,15 +1,7 @@
-import Head from 'next/head'
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
 import { TextScramble } from '@a7sc11u/scramble';
-
-import { SwitchTransition, CSSTransition } from "react-transition-group";
 import React from 'react';
-import { Button } from '@mui/material';
-
-
 
 export default function AboutCard() {
     const thingsIam = ['Full-Stack Engineer', 'Software Engineering Student', 'Software Engineer', 'Embedded Engineer', 'Innovator', 'Leader', 'Creative', 'Curious'];
