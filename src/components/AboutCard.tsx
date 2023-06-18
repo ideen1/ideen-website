@@ -17,12 +17,12 @@ export default function AboutCard() {
     const [currentThing, setCurrentThing] = useState('Software Engineer');
 
     useEffect(() => {
-        setTimeout(() => {
+        setInterval(() => {
             const randomThing = thingsIam[Math.floor(Math.random() * thingsIam.length)];
             setCurrentThing(randomThing);
 
         }, 3500);
-    }, [currentThing]);
+    }, []);
 
 
 

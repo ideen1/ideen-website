@@ -55,7 +55,7 @@ export default function Projects() {
                 <div className='grid m-5 place-items-center'>
                   <div className='grid h-full w-full gap-2'>
                     <h1 className='grid text-3xl font-bold text-white'>Contact Me!</h1>
-                    <p className='text-white'>Whether it's new opportunities, freelance tasks, or you just wanna get in touch, I'm always happy to chat. Feel free to drop me a message and I'll get back to you as soon as possible.</p>
+                    <p className='text-white'>Whether it&apos;s new opportunities, freelance tasks, or you just wanna get in touch, I&apos;m always happy to chat. Feel free to drop me a message and I&apos;ll get back to you as soon as possible.</p>
                   </div>
                 </div>
               </div>
