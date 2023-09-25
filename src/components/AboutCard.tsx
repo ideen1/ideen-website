@@ -39,7 +39,7 @@ export default function AboutCard() {
       <div className="grid m-auto bg-zinc-700 h-fit md:h-1/2 w-full lg:w-3/5 rounded-3xl">
         <Terminal name="Ideen" colorMode={ColorMode.Dark} height="100%" >
           <div className="grid grid-cols-1 h-full md:grid-cols-2 place-items-center">
-            <div className="grid h-4/5 w-full md:border-r-2 content-center">
+            <div className="grid h-full w-full md:border-r-2 content-center">
               <div className="grid m-5 place-items-center">
                 <div className="grid h-full w-4/5">
                   <Image
@@ -59,16 +59,15 @@ export default function AboutCard() {
               </div>
             </div>
             <div className="grid h-4/5 place-content-center">
-              <div className="grid m-5 justify-self-start">
+              <div className="grid m-auto justify-self-start w-4/5">
                 <p className="text-white">
                   Welcome to ideen.ca! I am a Software Engineering student who
                   is passionate about creating innovative solutions. Through
                   previous internships and clubs, I have worked with various
                   programming languages and technologies. I am eager to continue
                   learning and taking on new challenges to make a positive
-                  impact through software development. This summer, I will be
-                  joining <b>Hewlett Packard Enterprise</b> as a Software
-                  Intern.
+                  impact through software development. I'm currently working at <b>Garmin</b> as a Software
+                  Engineering Intern.
                 </p>
                 <div></div>
               </div>
