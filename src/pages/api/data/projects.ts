@@ -15,6 +15,12 @@ export const projects =
       launchUrl: 'https://meniapp.ca'
     },
     {
+      title: 'Symphony of Health Connections Website',
+      description: 'Interactive website for a health clinic focusing on technological innovations in the health industry',
+      image: '/project-images/symphony.png',
+      launchUrl: 'https://meniapp.ca'
+    },
+    {
       title: 'KoolTickets',
       description: 'Movie ticket booking app with focus on design patterns and PHP',
       image: '/project-images/kooltickets.png',
