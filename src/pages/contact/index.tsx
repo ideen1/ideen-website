@@ -1,22 +1,22 @@
-import Head from 'next/head'
-import Navigation from '@/components/Navigation';
-import AnimateSlide from '@/components/AnimateSlide';
-import { useForm } from 'react-hook-form';
-import { Button, CircularProgress, FormControl } from '@mui/material';
-import axios from 'axios';
-import { useState } from 'react';
-
+import Head from "next/head";
+import Navigation from "@/components/Navigation";
+import AnimateSlide from "@/components/AnimateSlide";
+import { useForm } from "react-hook-form";
+import { Button, CircularProgress, FormControl } from "@mui/material";
+import axios from "axios";
+import { useState } from "react";
+import Terminal, { ColorMode } from "react-terminal-ui";
 
 enum SubmissionStep {
   "NotSubmitted",
   "Submitting",
   "Success",
-  "Error"
+  "Error",
 }
 const FormFields = {
-  name: '',
-  email: '',
-  message: ''
+  name: "",
+  email: "",
+  message: "",
 };
 
 export default function Projects() {
@@ -26,54 +26,70 @@ export default function Projects() {
     formState: { errors },
   } = useForm();
 
-  const [submissionStep, setSubmissionStep] = useState<SubmissionStep>(SubmissionStep.NotSubmitted);
+  const [submissionStep, setSubmissionStep] = useState<SubmissionStep>(
+    SubmissionStep.NotSubmitted
+  );
 
   const submitForm = (data: any) => {
     setSubmissionStep(SubmissionStep.Submitting);
 
     // send post request to api
-    axios.post('https://formspree.io/f/xrgvnyla', data)
+    axios
+      .post("https://formspree.io/f/xrgvnyla", data)
       .then((response) => {
         setSubmissionStep(SubmissionStep.Success);
       })
       .catch((error) => {
         setSubmissionStep(SubmissionStep.Error);
       });
-
-  }
-
+  };
 
   const Success = () => (
     <>
-      <h1 className='text-white text-2xl mb-4'>Thank you for your message</h1>
-      <h1 className='text-white text-xl'>I&apos;ll get back to you as soon as possible</h1>
+      <h1 className="text-white text-2xl mb-4">Thank you for your message</h1>
+      <h1 className="text-white text-xl">
+        I&apos;ll get back to you as soon as possible
+      </h1>
     </>
   );
 
   const Error = () => (
-      <h1 className='text-white text-xl'>Sorry there was a problem submitting this form</h1>
+    <h1 className="text-white text-xl">
+      Sorry there was a problem submitting this form
+    </h1>
   );
 
   const Submitting = () => (
-    <CircularProgress className='m-auto' sx={{color:"white"}} />
+    <CircularProgress className="m-auto" sx={{ color: "white" }} />
   );
 
   const Form = () => (
     <form onSubmit={handleSubmit((data) => submitForm(data))} method="POST">
-      <FormControl className='w-full gap-2'>
+      <FormControl className="w-full gap-2">
         {Object.entries(FormFields).map(([key, value]) => (
-          <div key={key} className='grid w-full gap-2'>
-            <label className='grid text-2xl font-bold text-white'>{key}</label>
-            <input className='grid w-full p-2 text-black rounded-lg' {...register(key)} type={key} required />
+          <div key={key} className="grid w-full gap-2">
+            <label className="grid text-2xl font-bold text-white">{key}</label>
+            <input
+              className="grid w-full p-2 text-black rounded-lg"
+              {...register(key)}
+              type={key}
+              required
+            />
           </div>
         ))}
-        <div className='grid w-full mt-3'>
-          <Button style={{ backgroundColor: 'green' }} className='grid m-auto' variant="contained" type='submit'>Submit</Button>
+        <div className="grid w-full mt-3">
+          <Button
+            style={{ backgroundColor: "green" }}
+            className="grid m-auto"
+            variant="contained"
+            type="submit"
+          >
+            Submit
+          </Button>
         </div>
       </FormControl>
     </form>
   );
-
 
   return (
     <>
@@ -84,35 +100,49 @@ export default function Projects() {
         <link rel="icon" href="/favicon.ico" />
         <meta name="robots" content="all" />
       </Head>
-      <div className=''>
-        <AnimateSlide direction='down' delay={200}>
+      <div className="">
+        <AnimateSlide direction="down" delay={200}>
           <Navigation />
         </AnimateSlide>
 
-        <div className='flex flex-wrap gap-14 p-4'>
-          <div className='grid m-auto bg-zinc-700 h-fit md:h-1/2 w-full lg:w-3/5 rounded-3xl'>
-            <div className='grid grid-cols-1 h-full md:grid-cols-2 place-items-center p-8 w-full'>
-              <div className='grid h-full w-full md:border-r-2 content-center'>
-                <div className='grid m-5 place-items-center'>
-                  <div className='grid h-full w-full gap-2'>
-                    <h1 className='grid text-3xl font-bold text-white'>Contact Me!</h1>
-                    <p className='text-white'>Whether it&apos;s new opportunities, freelance tasks, or you just want to get in touch, I&apos;m always happy to chat. Feel free to drop me a message and I&apos;ll get back to you as soon as possible.</p>
+        <AnimateSlide direction="right">
+          <div className="flex flex-wrap gap-14 p-4">
+            <div className="grid m-auto bg-zinc-700 h-fit md:h-1/2 w-full lg:w-3/5 rounded-3xl">
+              <Terminal name="Ideen" colorMode={ColorMode.Dark} height="100%">
+                <div className="grid grid-cols-1 h-full md:grid-cols-2 place-items-center p-8 w-full">
+                  <div className="grid h-full w-full md:border-r-2 content-center">
+                    <div className="grid m-5 place-items-center">
+                      <div className="grid h-full w-full gap-2">
+                        <h1 className="grid text-3xl font-bold text-white">
+                          Contact Me!
+                        </h1>
+                        <p className="text-white">
+                          Whether it&apos;s new opportunities, freelance tasks,
+                          or you just want to get in touch, I&apos;m always
+                          happy to chat. Feel free to drop me a message and
+                          I&apos;ll get back to you as soon as possible.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="grid h-full w-full">
+                    <div className="grid w-4/5 m-auto">
+                      {submissionStep === SubmissionStep.NotSubmitted && (
+                        <Form />
+                      )}
+                      {submissionStep === SubmissionStep.Submitting && (
+                        <Submitting />
+                      )}
+                      {submissionStep === SubmissionStep.Success && <Success />}
+                      {submissionStep === SubmissionStep.Error && <Error />}
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className='grid h-full w-full'>
-                <div className='grid w-4/5 m-auto'>
-                  {submissionStep === SubmissionStep.NotSubmitted && <Form />}
-                  {submissionStep === SubmissionStep.Submitting && <Submitting />}
-                  {submissionStep === SubmissionStep.Success && <Success />}
-                  {submissionStep === SubmissionStep.Error && <Error />}
-
-                </div>
-              </div>
+              </Terminal>
             </div>
           </div>
-        </div>
+        </AnimateSlide>
       </div>
     </>
-  )
+  );
 }

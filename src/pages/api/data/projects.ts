@@ -18,7 +18,7 @@ export const projects =
       title: 'Symphony of Health Connections Website',
       description: 'Interactive website for a health clinic focusing on technological innovations in the health industry',
       image: '/project-images/symphony.png',
-      launchUrl: 'https://meniapp.ca'
+      launchUrl: 'https://symphonyhealth.ca'
     },
     {
       title: 'KoolTickets',

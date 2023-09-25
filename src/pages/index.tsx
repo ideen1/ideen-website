@@ -1,10 +1,10 @@
-import Head from 'next/head'
-import { Inter } from '@next/font/google'
-import Navigation from '@/components/Navigation';
-import AboutCard from '@/components/AboutCard';
-import AnimateSlide from '@/components/AnimateSlide';
+import Head from "next/head";
+import { Inter } from "@next/font/google";
+import Navigation from "@/components/Navigation";
+import AboutCard from "@/components/AboutCard";
+import AnimateSlide from "@/components/AnimateSlide";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -16,19 +16,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
         <meta name="robots" content="all" />
       </Head>
-      <div className='w-screen h-screen'>
-       
-        <div className='grid h-1/6 w-full '>
-          <AnimateSlide direction='down' delay={500}>
+      <div className="w-screen h-screen">
+        <div className="grid h-1/6 w-full ">
+          <AnimateSlide direction="down" delay={500}>
             <Navigation />
           </AnimateSlide>
         </div>
-        <div className='h-5/6 w-full content-start p-5 lg:p-0 Z-10'>
-          <AnimateSlide direction='right'>
+        <div className="h-5/6 w-full content-start p-5 lg:p-0 Z-10">
+          <AnimateSlide direction="right">
             <AboutCard />
           </AnimateSlide>
         </div>
       </div>
     </>
-  )
+  );
 }
