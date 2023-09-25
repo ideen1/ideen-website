@@ -2,14 +2,16 @@ import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { GoogleAnalytics } from "nextjs-google-analytics";
 
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import type { Engine, Container } from "tsparticles-engine";
 
 export default function App({ Component, pageProps }: AppProps) {
+
+  const [particlesReady, setParticlesReady] = useState(false);
+
   const particlesInit = useCallback(async (engine: Engine) => {
-    console.log(engine);
 
     // you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
@@ -18,7 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
   }, []);
 
   const particlesLoaded = useCallback(async (container: Container | undefined) => {
-    await console.log(container);
+    setParticlesReady(true);
   }, []);
 
   return (
@@ -95,7 +97,7 @@ export default function App({ Component, pageProps }: AppProps) {
         }}
       />
       <GoogleAnalytics gaMeasurementId="G-5GES0RQTCG" />
-      <Component {...pageProps} />
+      {particlesReady && <Component {...pageProps} />}
     </>
   )
 }

@@ -2,15 +2,19 @@ import Head from 'next/head'
 import { Inter } from '@next/font/google'
 import Navigation from '@/components/Navigation';
 import AnimateSlide from '@/components/AnimateSlide';
-import { Suspense } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import ProjectCard from '@/components/ProjectCard';
 import { ProjectData } from '@/types/IProject';
 import ProjectCardLoader from '@/components/ProjectCardLoader';
-import { projects } from '../api/data/projects';
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Projects(data: ProjectData) {
+export default function Projects() {
+
+  const [data, setData] = useState<ProjectData>({ projects: [] });
+  useEffect(() => {
+    fetch('/api/get-projects').then(res => res.json()).then(projects => setData(projects));
+  }, [])
 
 
   return (
@@ -57,7 +61,7 @@ export default function Projects(data: ProjectData) {
   )
 }
 
-export async function getServerSideProps() {
-  // Pass data to the page via props
-  return { props: projects }
-}
+// export async function getServerSideProps() {
+//   // Pass data to the page via props
+//   return { props: projects }
+// }

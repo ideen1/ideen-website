@@ -4,7 +4,6 @@ import { Button } from '@mui/material';
 import { Project } from '@/types/IProject';
 
 export default function ProjectCard(props: Project) {
-    console.log(props)
     return (
         <div className=' bg-zinc-700 h-64 rounded-3xl group overflow-hidden'>
             <div className='m-auto bg-zinc-900 h-64 rounded-3xl transition ease-in-out group-hover:-translate-y-10 duration-100 gap-y-2'>
