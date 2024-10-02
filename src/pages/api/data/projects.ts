@@ -21,6 +21,12 @@ export const projects =
       launchUrl: 'https://symphonyhealth.ca'
     },
     {
+      title: 'Node-SCIM',
+      description: 'A NPM module to facilitate the integration of SCIM user provisioning into enterprise apps. Abstracts the complex SCIM request/response payloads into an easy-to-use and agnostic interface.',
+      launchUrl: 'https://www.npmjs.com/package/node-scim',
+      github: 'https://github.com/ideen1/Node-SCIM'
+    },
+    {
       title: 'KoolTickets',
       description: 'Movie ticket booking app with focus on design patterns and PHP',
       image: '/project-images/kooltickets.png',
