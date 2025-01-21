@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { Button, CircularProgress, FormControl } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Terminal, { ColorMode } from "react-terminal-ui";
 
 enum SubmissionStep {
   "NotSubmitted",
@@ -23,6 +24,7 @@ export default function Projects() {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
   } = useForm();
 
   useEffect(() => {
@@ -115,41 +117,44 @@ export default function Projects() {
           <Navigation />
         </AnimateSlide>
 
-        <div className="flex flex-wrap p-4 gap-14">
-          <div className="grid w-full m-auto bg-zinc-700 h-fit md:h-1/2 lg:w-3/5 rounded-3xl">
-            <div className="grid w-full h-full grid-cols-1 p-8 md:grid-cols-2 place-items-center">
-              <div className="grid content-center w-full h-full md:border-r-2">
-                <div className="grid m-5 place-items-center">
-                  <div className="grid w-full h-full gap-2">
-                    <h1 className="grid text-3xl font-bold text-white">
-                      Contact Me!
-                    </h1>
-                    <p className="text-white">
-                      Whether it&apos;s new opportunities, freelance tasks, or
-                      you just want to get in touch, I&apos;m always happy to
-                      chat. Feel free to drop me a message and I&apos;ll get
-                      back to you as soon as possible.
-                    </p>
+        <AnimateSlide direction="right">
+          <div className="flex flex-wrap p-4 gap-14">
+            <div className="grid w-full m-auto bg-zinc-700 h-fit :h-1/2 xl:w-3/5 rounded-3xl">
+              <Terminal name="Ideen" colorMode={ColorMode.Dark} height="100%">
+                <div className="grid w-full h-full grid-cols-1 p-8 md:grid-cols-2 place-items-center">
+                  <div className="grid content-center w-full h-full md:border-r-2">
+                    <div className="grid m-5 place-items-center">
+                      <div className="grid w-full h-full gap-2">
+                        <h1 className="grid text-3xl font-bold text-white">
+                          Contact Me!
+                        </h1>
+                        <p className="text-white">
+                          Whether it&apos;s new opportunities, freelance tasks,
+                          or you just want to get in touch, I&apos;m always
+                          happy to chat. Feel free to drop me a message and
+                          I&apos;ll get back to you as soon as possible.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="grid w-full h-full">
+                    <div className="grid w-4/5 m-auto">
+                      {submissionStep === SubmissionStep.NotSubmitted && (
+                        <Form />
+                      )}
+                      {submissionStep === SubmissionStep.Submitting && (
+                        <Submitting />
+                      )}
+                      {submissionStep === SubmissionStep.Success && <Success />}
+                      {submissionStep === SubmissionStep.Error && <Error />}
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="grid w-full h-full">
-                <div className="grid w-4/5 m-auto">
-                  {submissionStep === SubmissionStep.NotSubmitted && <Form />}
-                  {submissionStep === SubmissionStep.Submitting && (
-                    <Submitting />
-                  )}
-                  {submissionStep === SubmissionStep.Success && <Success />}
-                  {submissionStep === SubmissionStep.Error && <Error />}
-                </div>
-              </div>
+              </Terminal>
             </div>
           </div>
-        </div>
+        </AnimateSlide>
       </div>
     </>
   );
-}
-function setValue(arg0: string, ip: any) {
-  throw new Error("Function not implemented.");
 }

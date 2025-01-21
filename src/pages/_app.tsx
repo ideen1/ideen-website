@@ -47,7 +47,7 @@ export default function App({ Component, pageProps }: AppProps) {
             },
             modes: {
               repulse: {
-                distance: 20,
+                distance: 75,
                 duration: 4,
               },
             },
@@ -73,7 +73,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 default: "bounce",
               },
               random: false,
-              speed: 1,
+              speed: 2,
               straight: false,
             },
             number: {
