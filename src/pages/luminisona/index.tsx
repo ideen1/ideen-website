@@ -125,11 +125,6 @@ export default function Home() {
         <meta name="robots" content="all" />
       </Head>
       <div className="">
-        <div className="grid w-full h-1/6 ">
-          <AnimateSlide direction="down" delay={500}>
-            <Navigation />
-          </AnimateSlide>
-        </div>
         <div className="flex flex-col items-center justify-center w-full gap-6 p-5 text-white lg:flex-row h-5/6">
           <div className="visible p-2 bg-gray-700 lg:hidden rounded-xl">
             Contact form for bookings and other business inquiries is below.
